@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #222;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75vw;
+    transform: translate(-50%,-150%);
+    font-size: 5vw;
+    text-align: center;
+    color: #333;
+    font-family: Helvetica;
+}
+
+h1::after {
+    display: block;
+    content: attr(data-spotlight);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 关键代码部分-开始 */
+    background: linear-gradient(90deg, rgba(219,54,54,1) 0%, rgba(199,16,142,1) 50%, rgba(0,172,255,1) 100%);
+    -webkit-clip-path:circle(12% at 12% 50%);
+    -webkit-background-clip: text;
+    clip-path: circle(12% at 12% 50%);
+    animation: slideShow 5s infinite;
+    color: transparent;
+    /* 关键代码部分-结束 */
+}
+
+@keyframes slideShow {
+    50% {
+        -webkit-clip-path:circle(12% at 90% 50%);
+        clip-path: circle(12% at 90% 50%);
+    }
+    100% {
+        -webkit-clip-path:circle(12% at 12% 50%);
+        clip-path: circle(12% at 12% 50%);
+    }
+
+}
