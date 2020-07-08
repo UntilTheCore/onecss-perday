@@ -54,6 +54,11 @@ let player = {
       player.speed = 100
       player.run()
    },
+   normal() {
+      player.clearTime()
+      player.speed = 50
+      player.run()
+   },
    fast() {
       player.clearTime()
       player.speed = 0
