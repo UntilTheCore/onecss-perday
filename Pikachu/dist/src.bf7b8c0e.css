@@ -1,0 +1,20 @@
+*{margin:0;padding:0}*,:after,:before{box-sizing:border-box}body>div{height:50vh;width:100vw}@media screen and (min-width:800px){.codeBox{width:50vw;margin:0 auto;border:1px solid #ccc}.btnsBox{margin-left:43%}}@media screen and (max-width:800px){.btnsBox{right:20px}}.codeBox{position:relative;overflow-y:auto;overflow-x:hidden}.codeBox>pre{white-space:pre-wrap}.btnsBox{position:fixed;display:flex;flex-direction:column;top:20px}.btnsBox>button{margin-top:8px;padding:6px}.codeBox::-webkit-scrollbar{width:0;height:0}.faceBox{position:relative;background-color:#fee433;overflow:hidden}.faceBox>div{position:absolute;top:40%;left:50%}
+
+/*!* 画出它的鼻子 *!*/
+
+/*!* 然后把眼睛画出来 *!*/
+
+/*!* 把左眼放到左边 *!*/
+
+
+/*!* 把右眼放到右边 *!*/
+
+
+/*!* 开始画皮卡丘的嘴巴 *!*/
+
+/*!* 开始画皮卡丘的脸颊 *!*/
+
+/*!* 最后让皮卡丘更有神一点(画丘点睛) *!*/
+/*!* 完成，一只可爱的皮卡丘送给你! *!*/
+
+/*# sourceMappingURL=src.bf7b8c0e.css.map */
