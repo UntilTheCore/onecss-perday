@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,li {
+  list-style: none;
+}
+
+header {
+  height: 44px;
+  background: #000;
+  padding: 0 18px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+
+#toggle:checked + label .box {
+  background: cyan;
+}
+
+#toggle {
+  display: none;
+}
+
+.hamburger-container {
+  position: relative;
+  top: 16px;
+  height: 20px;
+  width: 20px;
+}
+
+.hamburger-container span {
+  position: relative;
+  top: 0;
+  display: block;
+  height: 1px;
+  background: #fff;
+  /* 先执行 transform 的动画，但不延迟，再执行 top 的动画 */
+  transition: transform .3s ease-in-out, top .3s ease-in-out .3s;
+}
+
+.hamburger-container span:nth-child(2) {
+  margin-top: 7px;
+}
+
+#toggle:checked + label .hamburger-container span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 4px;
+  /* 先执行 top 的动画，但不延迟，再执行 transform 的动画 */
+  transition: top .3s ease-in-out, transform .3s ease-in-out .3s;
+}
+
+#toggle:checked + label .hamburger-container span:nth-child(2) {
+  transform: rotate(-45deg);
+  top: -4px;
+  /* 先执行 top 的动画，但不延迟，再执行 transform 的动画 */
+  transition: top .3s ease-in-out, transform .3s ease-in-out .3s;
+}
+
+.nav-items {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.82);
+  transform: scaleY(0);
+  /* 延迟时间和 icon 的动画时间保持一致*/
+  transition: transform .3s ease-in-out .3s,opacity .3s ease-in-out .3s;
+  /* 设置产生 transform 时触发位置为顶部居中位置 */
+  transform-origin: 50% 0;
+  opacity: 0;
+}
+
+#toggle:checked ~ .nav-items {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+ul li {
+  color: #eee;
+}
