@@ -1,79 +1,101 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>project list</title>
-    <style>
-        * {margin: 0;padding:0;box-sizing: border-box}
-        *::after,*::before {margin: 0;pading:0;}
-        a {text-decoration: none;color:#337ab7}
-        a:hover {text-decoration:underline;color: #23527c }
-        section {
-            width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 50px;
-        }
+  <meta charset="UTF-8">
+  <title>project list</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-        header > h1 {
-            font-size: 36px;
-            color: #333;
-            text-align: center;
-        }
+    *::after, *::before {
+      margin: 0;
+      pading: 0;
+    }
 
-        hr {
-            border: 0;
-            border-bottom: 1px solid #ccc;
-            margin: 20px 0;
-        }
+    a {
+      text-decoration: none;
+      color: #337ab7
+    }
 
-        main {
-            display: inline-block;
-            border: 1px solid #ccc;
-            min-width: 100%;
-            min-height: 1000px;
-            color: #333;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-            padding: 0 10px;
-            margin-top: 20px;
-        }
+    a:hover {
+      text-decoration: underline;
+      color: #23527c
+    }
 
-        main > div {
-            display: flex;
-            margin-top: 5px;
-            align-items: center;
-        }
-        main > div > span ,
-        main > div > a {
-            flex :1;
-        }
-    </style>
+    section {
+      width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+
+    header > h1 {
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      margin: 20px 0;
+    }
+
+    main {
+      display: inline-block;
+      border: 1px solid #ccc;
+      min-width: 100%;
+      min-height: 1000px;
+      color: #333;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      padding: 0 10px;
+      margin-top: 20px;
+    }
+
+    main > div {
+      display: flex;
+      margin-top: 5px;
+      align-items: center;
+    }
+
+    main > div > span,
+    main > div > a {
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
-    <section>
-        <header>
-            <h1>每天一个CSS-导航</h1>
-        </header>
-        <hr/>
-        <main>
-            <div class="title">
-                <span>名称</span>
-                <span>日期</span>
-            </div>
-            <div class="spotLight">
-                <a href="https://untilthecore.github.io/onecss-perday/spotlight/dist/index.html" target="_blank">聚光灯-欢迎页</a>
-                <span>2020-7-6</span>
-            </div>
-            <div class="pikachu">
-                <a href="https://untilthecore.github.io/onecss-perday/pikachu/dist/index.html" target="_blank">皮卡丘</a>
-                <span>2020-7-7</span>
-            </div>
-			<div class="hamburger-menu">
-                <a href="https://untilthecore.github.io/onecss-perday/hamburgerMenu/dist/index.html" target="_blank">汉堡菜单</a>
-                <span>2021-1-9</span>
-            </div>
-        </main>
-    </section>
+<section>
+  <header>
+    <h1>每天一个CSS-导航</h1>
+  </header>
+  <hr/>
+  <main>
+    <div class="title">
+      <span>名称</span>
+      <span>日期</span>
+    </div>
+    <div class="spotLight">
+      <a href="https://untilthecore.github.io/onecss-perday/spotlight/dist/index.html" target="_blank">聚光灯-欢迎页</a>
+      <span>2020-7-6</span>
+    </div>
+    <div class="pikachu">
+      <a href="https://untilthecore.github.io/onecss-perday/pikachu/dist/index.html" target="_blank">皮卡丘</a>
+      <span>2020-7-7</span>
+    </div>
+    <div class="hamburger-menu">
+      <a href="https://untilthecore.github.io/onecss-perday/hamburgerMenu/dist/index.html" target="_blank">汉堡菜单</a>
+      <span>2021-1-9</span>
+    </div>
+    <div class="flipping-card">
+      <a href="https://untilthecore.github.io/onecss-perday/flippingCard/dist/index.html" target="_blank">翻牌动画</a>
+      <span>2021-1-10</span>
+    </div>
+  </main>
+</section>
 </body>
 </html>
