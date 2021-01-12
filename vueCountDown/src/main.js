@@ -36,13 +36,14 @@ new Vue({
       if (!this.isAnimate) {
         this.isAnimate = true
         this.timer = window.setInterval(() => {
-          // 控制动画的顺滑度
+          // 控制动画
           this.percentage -= 1 / 10
           if (this.percentage <= 0) {
             clearInterval(this.timer)
             this.percentage = 100
+            this.isAnimate = false
           }
-        }, this.seconds * 1000 / 100 / 10)
+        }, this.seconds)
       }
     }
   }
