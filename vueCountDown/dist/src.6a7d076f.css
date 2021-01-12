@@ -1,2 +1,0 @@
-body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#43119a}.circle{transform:rotate(-90deg);transform-origin:50% 50%}#count-down{position:relative;display:inline-block}#count-down span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:60px;font-family:Arial;color:#f36f21}
-/*# sourceMappingURL=src.6a7d076f.css.map */

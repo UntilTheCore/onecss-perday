@@ -1,1 +1,34 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><title>vue count down</title><link rel="stylesheet" href="src.6a7d076f.css"></head><body> <div id="app"> <div id="count-down"> <svg><circle class="circle" fill="transparent" stroke="#270B58" stroke-linecap="round"/><circle class="circle" fill="transparent" stroke="#F36F21" stroke-linecap="round"/></svg> <span>{{ countDown }}</span> </div> <button @click="animate">start</button> </div> <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script> <script src="main.4f429ce9.js"></script> </body></html>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>vue count down</title>
+  <link rel="stylesheet" href="src.40e274c8.css">
+</head>
+<body>
+<div id="app">
+  <div id="count-down">
+    <svg :width="size" :height="size">
+      <!--
+        属性：
+          stroke-width: 笔画宽度,画圆的时候，如果笔画宽度是 10，而半径正好等于svg宽度的一半，那么圆的边框会被裁剪
+          原因为圆的边框宽度由圆线开始内外各一半。解决这个问题需要将 circle 的半径设置为 r - stroke-width / 2,案例中的 r 计算为 55
+          stroke: #000 笔画的颜色
+          cx: 圆心的 x 位置
+          cy: 圆心的 y 位置
+          stroke-dasharray: 虚线的长度
+          stroke-dashoffset: 空白缺口的长度
+       -->
+      <!-- 背景圆 -->
+      <circle class="circle" :r="radius" fill="transparent" :stroke-width="stroke" stroke="#270B58" :cx="circleOffset" :cy="circleOffset" :stroke-dasharray="circumference" stroke-linecap="round"></circle>
+      <!--  动态圆 -->
+      <circle class="circle" :r="radius" fill="transparent" :stroke-width="stroke" stroke="#F36F21" :cx="circleOffset" :cy="circleOffset" :stroke-dasharray="circumference" :stroke-dashoffset="progress" stroke-linecap="round"></circle>
+    </svg>
+    <span>{{ countDown }}</span>
+  </div>
+  <button @click="animate">start</button>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
+<script src="main.4308f2ea.js"></script>
+</body>
+</html>
