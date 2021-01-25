@@ -1,0 +1,78 @@
+:root {
+  --button-width: 500px;
+  --button-height: 295px;
+  --toggle-diameter: 255px;
+  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 333px;
+  --color-grey: #E9E9E9;
+  --color-dark-grey: #39393D;
+  --color-green: #30d158;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+/* 按钮的样式和动画处理 */
+span {
+  display: inline-block;
+  position: relative;
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: calc(var(--button-height) / 2);
+  background-color: var(--color-grey);
+  transition: .3s all ease-in-out;
+}
+
+span::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: var(--toggle-diameter);
+  width: var(--toggle-diameter);
+  background-color: #FFF;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--button-toggle-offset) * 4) rgba(0, 0, 0, .1);
+  transition: .3s all ease-in-out;
+}
+
+input[type="checkbox"]:checked + label span {
+  background-color: var(--color-green);
+}
+
+input[type="checkbox"]:checked + label span::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--button-toggle-offset) * 4) rgba(0, 0, 0, .1);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/**
+  按钮在激活状态下的样式
+ */
+input[type="checkbox"]:active + label span::after {
+  width: var(--toggle-wider);
+}
+
+input[type="checkbox"]:checked:active + label span::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
+
+/* 自动判断系统的色彩模式并更改元素的样式，此效果mac和win10的深色模式下有效 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1C1C1E;
+  }
+
+  span {
+    background-color: var(--color-dark-grey);
+  }
+}
