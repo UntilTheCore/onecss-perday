@@ -1,0 +1,118 @@
+.time-axis-wrapper {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+.time-axis-wrapper ul {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 350px;
+  transition: all 1s;
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+}
+.time-axis-wrapper ul::-webkit-scrollbar {
+  width: 5px;
+  /*滚动条宽度*/
+  height: 5px;
+  /*滚动条高度*/
+}
+.time-axis-wrapper ul::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  /*滚动条的背景区域的圆角*/
+  background-color: #cecece;
+  /*滚动条的背景颜色*/
+}
+.time-axis-wrapper ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /*滚动条的圆角*/
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #aaa;
+  /*滚动条的背景颜色*/
+}
+.time-axis-wrapper ul li.item-wrap {
+  margin-left: 30px;
+  /*用左边margin显示时间线*/
+  width: calc(100% - 30px);
+  /*因为左边部分用于显示时间线，所以右边部分减去30px*/
+  height: auto;
+  /*高度由内容决定*/
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+  /*      &.active::after {
+              transform: scale3d(1.1, 1, 1);
+              background-color: #569ffb;
+            }*/
+  /*      &:hover:after {
+              transform: scale3d(1.1, 1, 1);
+              background-color: #569ffb;
+            }*/
+}
+.time-axis-wrapper ul li.item-wrap:before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #ccc;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.time-axis-wrapper ul li.item-wrap:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 2px;
+  height: calc(100% + 10px);
+  /*加上10px是item底部的margin*/
+  background-color: #ccc;
+  transition: all 0.3s;
+  margin: 3px 0;
+}
+.time-axis-wrapper ul li.item-wrap > .item-title {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #306BAF;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+.time-axis-wrapper ul li.item-wrap > .item-content {
+  width: 100%;
+  height: auto;
+  /*由内容决定*/
+  position: relative;
+  white-space: pre-wrap;
+  /*保留空白符序列，但是正常地进行换行*/
+  word-wrap: break-word;
+  /*在长单词或 URL 地址内部进行换行*/
+}
+.time-axis-wrapper ul li.item-wrap > .item-content > span {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 15px;
+}
+.time-axis-wrapper ul li.item-wrap.active::before {
+  transform: scale3d(1.2, 1.2, 1);
+  background-color: #666;
+}
+.time-axis-wrapper ul li.item-wrap.active > .item-title {
+  background-color: #CE352C;
+}
+.time-axis-wrapper ul li.item-wrap:hover::before {
+  transform: scale3d(1.2, 1.2, 1);
+  background-color: #666;
+}
+
+
+/*# sourceMappingURL=/src.5aa9afe8.css.map */

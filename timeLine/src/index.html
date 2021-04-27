@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>time line</title>
+  <link rel="stylesheet" href="index.less">
+</head>
+<body>
+<div id="app">
+  <div class="time-axis-wrapper">
+    <section class="title">高考时间轴</section>
+    <ul ref="list">
+      <li
+          v-for="(item,index) in items"
+          :key="index"
+          class="item-wrap"
+          :class="activeItemIndex === index ? 'active': ''"
+          @click="selectItem(index)"
+      >
+        <div class="item-title">{{ item.index }}</div>
+        <div class="item-content">
+          <span v-for="(v,i) in item.content" :key="i">{{ v }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
